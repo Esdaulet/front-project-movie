@@ -10,6 +10,7 @@ import "./App.css";
 import DisplayData from "./components/Contact/DisplayData";
 import Profile from "./components/Login/Profile";
 import ImdbSearch from "./components/Imdb/ImdbSearch";
+import ReviewsCarousel from "./components/Review/MainReview";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route path="/displaydata" element={<DisplayData />} />
           <Route path="/login" element={<Profile />} />
           <Route path="/imdb" element={<ImdbSearch />} />
+          <Route path="/review" element={<ReviewsCarousel />} />
         </Routes>
         <Footer />
       </Router>

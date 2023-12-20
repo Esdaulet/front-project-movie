@@ -80,9 +80,9 @@ header button {
     position: absolute;
     top: 0;
     left: 0;
-    background-color: #5a08ad;
+    background-color: #000000;
     width: 40%;
-    height: 100vh;
+    height: 120vh;
     z-index: 9999;
   }
   header ul li {

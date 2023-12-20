@@ -49,6 +49,9 @@ const Header = () => {
               <li>
                 <Link to="/imdb">Movie Searcher</Link>
               </li>
+              <li>
+                <Link to="/review">ReviewList</Link>
+              </li>
             </ul>
             <button className="toggle" onClick={() => setMobile(!Mobile)}>
               {Mobile ? (

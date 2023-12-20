@@ -1,0 +1,33 @@
+.arrow-btn {
+  background: none;
+  border: none;
+}
+
+.overall-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.review-content-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  background-color: gold;
+}
+
+.profile-pic {
+  height: 100px;
+  width: 100px;
+}
+
+.user-name {
+  color: #fff;
+  font-weight: bold;
+}
+
+.desc {
+  text-align: center;
+}
