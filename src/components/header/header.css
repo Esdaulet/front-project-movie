@@ -1,0 +1,104 @@
+header {
+  height: 18vh;
+  line-height: 10vh;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.9),
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0)
+  );
+  color: #fff;
+  position: relative;
+  z-index: 999;
+  align-items: center;
+}
+
+.logofine {
+  font-size: 35px;
+}
+
+.logo {
+  margin-top: 4px;
+  align-items: center;
+}
+
+.Appcolor {
+  color: #5a08ad;
+}
+
+.dot {
+  color: #5a08ad;
+  font-size: 50px;
+}
+header a {
+  color: #fff;
+  margin-left: 30px;
+  margin-top: 30px;
+}
+header i {
+  width: 40px;
+  height: 40px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin: 0 10px;
+}
+
+.searchButton1 {
+  margin-top: 10px;
+  width: 50px;
+  height: 40px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.searchInput1 {
+  height: 40px;
+}
+header button {
+  font-size: 15px;
+  font-weight: bold;
+}
+.toggle {
+  display: none;
+}
+@media only screen and (max-width: 768px) {
+  header nav .flexSB {
+    display: none;
+    margin-left: 10px;
+  }
+  .account {
+    display: none;
+    margin-left: 100rem;
+  }
+  .navMenu-list {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #5a08ad;
+    width: 40%;
+    height: 100vh;
+    z-index: 9999;
+  }
+  header ul li {
+    align-items: left;
+    margin-top: 50px;
+    padding: 0 10px;
+    font-size: 20px;
+  }
+  .toggle {
+    display: block;
+    position: absolute;
+    top: -10px;
+    bottom: 0;
+    right: 20px;
+    margin: auto;
+    cursor: pointer;
+    background: none;
+  }
+}

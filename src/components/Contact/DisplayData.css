@@ -1,0 +1,49 @@
+.display-data-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.data-table th,
+.data-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.data-table th {
+  background-color: #5a08ad;
+  color: #ffffff;
+}
+
+.data-item {
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #5a08ad;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.data-item p {
+  margin: 0;
+}
+
+.data-item strong {
+  color: #ffffff;
+}
+
+.request {
+  color: #000000;
+  margin-bottom: 30px;
+  text-align: center;
+}

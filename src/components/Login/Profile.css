@@ -1,0 +1,35 @@
+.container111 {
+  max-width: 800px;
+  margin-top: 100px;
+  margin-right: 0px;
+}
+
+.form-container {
+  background-color: #313b44;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(207, 207, 207, 0.1);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.btn-primary {
+  width: 100%;
+}
+
+.baton {
+  color: hsl(0, 0%, 100%);
+  background-color: rgb(0, 186, 232);
+}
+
+.loggg {
+  color: white;
+  text-align: center;
+}

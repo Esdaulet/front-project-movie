@@ -1,0 +1,84 @@
+.bodymassazh {
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+#contact {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+}
+
+.contact_h1 {
+  text-align: center;
+  padding: 50px;
+  width: 50%;
+  align-items: center;
+  margin-left: -100px;
+
+  font-weight: 600;
+  background-image: conic-gradient(
+    #553c9a 0%,
+    #553c9a 33%,
+    #ee4b2b 33%,
+    #ee4b2b 66%,
+    #ffffff 66%,
+    #ffffff 99%
+  );
+  color: transparent;
+
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.form {
+  margin: auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+#errormessage {
+  color: red;
+  margin-bottom: 10px;
+}
+
+#sendmessage {
+  color: green;
+  margin-top: 10px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-primary {
+  background-color: #5a08ad;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #e50813;
+}
+
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: vertical;
+}
