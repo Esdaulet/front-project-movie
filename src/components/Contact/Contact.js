@@ -4,7 +4,7 @@ import "./Contact.css";
 
 const Contact = () => {
   const [contactData, setContactData] = useState({});
-  const [errorMsg, setErrorMsg] = useState();
+  const [errorMsg, setErrorMsg] = useState({});
   const [successMsg, setSuccessMsg] = useState(false);
 
   const navigate = useNavigate();
@@ -35,49 +35,63 @@ const Contact = () => {
     }
   };
 
+  const validateAndSubmit = () => {
+    const validationErrors = Object.entries(contactData).reduce(
+      (errors, [field, value]) => {
+        const error = validateField(field, value);
+        if (error) {
+          errors[field] = error;
+        }
+        return errors;
+      },
+      {}
+    );
+
+    if (Object.keys(validationErrors).length > 0) {
+      setErrorMsg(validationErrors);
+      setSuccessMsg(false);
+    } else {
+      setSuccessMsg(true);
+      const storedData = JSON.parse(localStorage.getItem("contactData")) || [];
+
+      if (!Array.isArray(storedData)) {
+        localStorage.setItem("contactData", JSON.stringify([]));
+        return;
+      }
+
+      const newData = { ...contactData };
+      storedData.push(newData);
+      localStorage.setItem("contactData", JSON.stringify(storedData));
+      navigate("/displaydata");
+    }
+  };
+
   const handleBlur = (event) => {
-    setErrorMsg(validateField(event.target.name, event.target.value));
+    setErrorMsg((prevErrors) => ({
+      ...prevErrors,
+      [event.target.name]: validateField(event.target.name, event.target.value),
+    }));
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
 
-    let updatedData = {
-      ...contactData,
+    setContactData((prevData) => ({
+      ...prevData,
       [name]: name === "mobile" ? value.replace(/\D/, "") : value,
-    };
-
-    setContactData(updatedData);
+    }));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (
-      contactData.name === "" ||
-      contactData.name === undefined ||
-      contactData.mobile === "" ||
-      contactData.mobile === undefined ||
-      contactData.email === "" ||
-      contactData.email === undefined ||
-      contactData.company === "" ||
-      contactData.company === undefined ||
-      contactData.message === "" ||
-      contactData.message === undefined
-    ) {
-      setSuccessMsg(false);
-    } else {
-      setSuccessMsg(true);
-      localStorage.setItem("contactData", JSON.stringify(contactData));
-      navigate("/displaydata");
-    }
+    validateAndSubmit();
   };
 
   return (
     <div className="bodymassazh">
       <h1 className="contact_h1">
         Оставляете заявку если хотите получать уведомление о новых фильмах и
-        сериалов
+        сериалах
       </h1>
       <div id="contact">
         <div className="form">
@@ -88,8 +102,13 @@ const Contact = () => {
           >
             {!successMsg ? (
               <>
-                <div id="errormessage" className={errorMsg ? "show" : ""}>
-                  {errorMsg}
+                <div
+                  id="errormessage"
+                  className={Object.keys(errorMsg).length > 0 ? "show" : ""}
+                >
+                  {Object.keys(errorMsg).map((field, index) => (
+                    <div key={index}>{errorMsg[field]}</div>
+                  ))}
                 </div>
                 <div className="form-group">
                   <input

@@ -69,6 +69,7 @@ class Main extends Component {
   searchMovie = (evt) => {
     if (evt.key === "Enter") {
       const { search } = this.state;
+      evt.preventDefault();
       const newUrl = `https://api.themoviedb.org/3/search/movie?api_key=63a4c62e6e5687b36ee5e2ce8e1deb1a&query=${search}`;
       this.setState({ url_set: newUrl, selectedFilter: "Drama" }, () => {
         this.fetchData();
@@ -105,7 +106,7 @@ class Main extends Component {
                 className="inputText"
                 onChange={(e) => this.setState({ search: e.target.value })}
                 value={search}
-                onKeyPress={this.searchMovie}
+                onKeyDown={this.searchMovie}
               ></input>
               <button>
                 <i className="fas fa-search"></i>
